@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Coupon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
+<body>
+  <main class="app">
+    <section class="gift-screen" id="giftScreen">
+      <div class="sparkles"></div>
+
+      <div class="gift-card">
+        <p class="small-title">Happy Birthday</p>
+        <h1>To Suguru</h1>
+
+        <div class="gift-box" id="openGift">
+          <div class="lid"></div>
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+          <div class="box-body"></div>
+        </div>
+
+        <p class="gift-message">
+          QRコードを読み込んでくれてありがとう。<br>
+          プレゼントを開封してください。
+        </p>
+
+        <button class="open-button" id="openButton">
+          🎀 封を開ける
+        </button>
+      </div>
+    </section>
+
+    <section class="ticket-screen hidden" id="ticketScreen">
+      <div class="ticket-card">
+        <p class="coupon-number" id="couponNumber">Coupon No.</p>
+        <div class="icon" id="ticketIcon">🎁</div>
+        <h2 id="ticketTitle">Birthday Coupon</h2>
+
+        <div class="pass-area" id="passArea">
+          <p class="pass-label">パスコードを入力してください</p>
+          <input id="passInput" type="password" placeholder="Passcode" />
+          <button id="passButton">OPEN</button>
+          <p class="error" id="errorText"></p>
+        </div>
+
+        <div class="content hidden" id="content">
+          <div class="photo-frame">
+            <p>📷 写真はあとからここに入れます</p>
+          </div>
+
+          <p class="message" id="ticketMessage"></p>
+
+          <div class="note-area" id="noteArea"></div>
+
+          <p class="footer-text">
+            Made with love for your birthday. 🎂🤍
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
