@@ -29,7 +29,7 @@ body {
   height: 44px;
   border-radius: 50%;
   border: 1px solid #c7a66b;
-  background: rgba(255, 250, 242, 0.9);
+  background: rgba(255, 250, 242, 0.92);
   font-size: 20px;
   box-shadow: 0 8px 20px rgba(60, 38, 18, 0.16);
 }
@@ -54,8 +54,8 @@ body {
   content: "";
   position: absolute;
   inset: -40%;
-  background: radial-gradient(circle, rgba(199,166,107,.25), transparent 35%);
-  animation: shimmer 5s infinite linear;
+  background: radial-gradient(circle, rgba(199,166,107,.24), transparent 35%);
+  animation: shimmer 7s infinite linear;
   pointer-events: none;
 }
 
@@ -81,7 +81,7 @@ h1 {
 }
 
 .ticket-preview {
-  font-size: 36px;
+  font-size: 38px;
   margin-bottom: 4px;
   animation: float 2.5s ease-in-out infinite;
 }
@@ -119,7 +119,8 @@ h1 {
   top: 20px;
   left: 0;
   border-radius: 8px;
-  transition: 0.8s;
+  transition: 0.85s;
+  z-index: 4;
 }
 
 .ribbon-vertical {
@@ -129,7 +130,7 @@ h1 {
   position: absolute;
   left: 71px;
   bottom: 0;
-  z-index: 2;
+  z-index: 5;
 }
 
 .ribbon-horizontal {
@@ -139,16 +140,16 @@ h1 {
   position: absolute;
   top: 88px;
   left: 0;
-  z-index: 3;
+  z-index: 6;
 }
 
 .gift-box.open .lid {
-  transform: translateY(-42px) rotate(-10deg);
+  transform: translateY(-45px) rotate(-12deg);
 }
 
 .gift-box.open .ribbon-vertical,
 .gift-box.open .ribbon-horizontal {
-  animation: ribbonFade 0.8s forwards;
+  animation: ribbonFade 0.75s forwards;
 }
 
 @keyframes ribbonFade {
@@ -186,7 +187,7 @@ h1 {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 25px;
   margin: 8px 0 24px;
   font-weight: 500;
   position: relative;
@@ -226,19 +227,20 @@ h2 {
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slider {
+  display: grid;
+  grid-template-columns: 32px 1fr 32px;
+  align-items: center;
+  gap: 4px;
 }
 
 .photo-frame {
-  margin: 22px auto;
-  min-height: 190px;
+  margin: 22px auto 8px;
+  min-height: 205px;
   border: 1px dashed #c7a66b;
   border-radius: 22px;
   display: grid;
@@ -251,9 +253,25 @@ h2 {
 .photo-frame img {
   width: 100%;
   height: 100%;
-  max-height: 260px;
+  max-height: 285px;
   object-fit: cover;
   border-radius: 20px;
+  cursor: zoom-in;
+  animation: fadeUp 0.5s ease;
+}
+
+.slide-btn {
+  border: none;
+  background: transparent;
+  color: #8a6a3d;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.photo-count {
+  font-size: 12px;
+  color: #9a7b4b;
+  min-height: 16px;
 }
 
 .message {
@@ -279,7 +297,7 @@ h2 {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.78);
   display: grid;
   place-items: center;
   z-index: 20;
@@ -288,12 +306,12 @@ h2 {
 
 .modal img {
   max-width: 100%;
-  max-height: 80vh;
+  max-height: 82vh;
   border-radius: 20px;
 }
 
 .final-mode {
-  background: linear-gradient(145deg, #12100f, #302214);
+  background: radial-gradient(circle at top, #4c3516, #12100f 55%);
   color: #f7e3af;
 }
 
@@ -311,8 +329,16 @@ h2 {
 .final-mode .small-title,
 .final-mode .coupon-number,
 .final-mode .footer-text,
-.final-mode .note-area {
+.final-mode .note-area,
+.final-mode .slide-btn,
+.final-mode .photo-count {
   color: #d4af37;
+}
+
+.final-mode .open-button,
+.final-mode #passButton {
+  background: linear-gradient(135deg, #6d4d10, #d4af37);
+  color: #17120e;
 }
 
 @media (max-width: 420px) {
