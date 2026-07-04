@@ -7,28 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button class="music-button" id="musicButton" aria-label="BGM">🔇</button>
-
   <main class="app">
     <section class="gift-screen" id="giftScreen">
       <div class="gift-card">
         <p class="small-title">Happy Birthday</p>
         <h1>To Suguru</h1>
-
         <div class="ticket-preview" id="ticketPreview">🎁</div>
-
         <div class="gift-box" id="openGift">
-          <div class="lid"></div>
-          <div class="ribbon-vertical"></div>
-          <div class="ribbon-horizontal"></div>
-          <div class="box-body"></div>
+          <div class="lid"></div><div class="ribbon-vertical"></div><div class="ribbon-horizontal"></div>
+          <div class="bow-left"></div><div class="bow-right"></div><div class="box-body"></div>
         </div>
-
-        <p class="gift-message">
-          QRコードを読み込んでくれてありがとう。<br>
-          プレゼントを開封してください。
-        </p>
-
+        <p class="gift-message">QRコードを読み込んでくれてありがとう。<br>プレゼントを開封してください。</p>
         <button class="open-button" id="openButton">🎀 封を開ける</button>
       </div>
     </section>
@@ -38,39 +27,31 @@
         <p class="coupon-number" id="couponNumber">Coupon No.</p>
         <div class="icon" id="ticketIcon">🎁</div>
         <h2 id="ticketTitle">Birthday Coupon</h2>
-
         <div class="pass-area" id="passArea">
           <p class="pass-label">パスコードを入力してください</p>
           <input id="passInput" type="password" inputmode="numeric" placeholder="Passcode" />
           <button id="passButton">OPEN</button>
           <p class="error" id="errorText"></p>
         </div>
-
+        <div class="accepted hidden" id="accepted">✓ PASSCODE ACCEPTED</div>
         <div class="content hidden" id="content">
-          <div class="slider" id="slider">
-            <button class="slide-btn prev" id="prevBtn">‹</button>
-            <div class="photo-frame" id="photoFrame">
-              <p>📷 写真はあとからここに入れます</p>
-            </div>
-            <button class="slide-btn next" id="nextBtn">›</button>
+          <div class="slider">
+            <button class="slide-btn" id="prevBtn">‹</button>
+            <div class="photo-frame" id="photoFrame"><p>📷 写真はあとからここに入れます</p></div>
+            <button class="slide-btn" id="nextBtn">›</button>
           </div>
-
           <p class="photo-count" id="photoCount"></p>
-          <p class="message typewriter" id="ticketMessage"></p>
+          <p class="message" id="ticketMessage"></p>
           <div class="note-area" id="noteArea"></div>
-
-          <p class="footer-text">
-            Made with love for your birthday. 🎂🤍
-          </p>
+          <p class="footer-text">Made with love for your birthday. 🎂🤍</p>
         </div>
       </div>
     </section>
   </main>
-
   <div class="modal hidden" id="photoModal">
+    <button class="modal-close" id="modalClose">×</button>
     <img id="modalImage" src="" alt="photo">
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
