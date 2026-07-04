@@ -6,9 +6,8 @@
   <title>Birthday Coupon</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <button class="music-button" id="musicButton">🔇</button>
+  <button class="music-button" id="musicButton" aria-label="BGM">🔇</button>
 
   <main class="app">
     <section class="gift-screen" id="giftScreen">
@@ -42,17 +41,22 @@
 
         <div class="pass-area" id="passArea">
           <p class="pass-label">パスコードを入力してください</p>
-          <input id="passInput" type="password" placeholder="Passcode" />
+          <input id="passInput" type="password" inputmode="numeric" placeholder="Passcode" />
           <button id="passButton">OPEN</button>
           <p class="error" id="errorText"></p>
         </div>
 
         <div class="content hidden" id="content">
-          <div class="photo-frame" id="photoFrame">
-            <p>📷 写真はあとからここに入れます</p>
+          <div class="slider" id="slider">
+            <button class="slide-btn prev" id="prevBtn">‹</button>
+            <div class="photo-frame" id="photoFrame">
+              <p>📷 写真はあとからここに入れます</p>
+            </div>
+            <button class="slide-btn next" id="nextBtn">›</button>
           </div>
 
-          <p class="message" id="ticketMessage"></p>
+          <p class="photo-count" id="photoCount"></p>
+          <p class="message typewriter" id="ticketMessage"></p>
           <div class="note-area" id="noteArea"></div>
 
           <p class="footer-text">
